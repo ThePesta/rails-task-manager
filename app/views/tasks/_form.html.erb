@@ -1,0 +1,9 @@
+<%= form_for @task do |f| %>
+  <%= f.label :name, "Enter Task Name:" %>
+  <%= f.text_field :name %>
+  <% if params[:action] == "edit" %>
+    <%= f.label :done, "Done:" %>
+    <%= f.select(:done, options_for_select([['false',false], ['true',true]], @task.done))%>
+  <% end %>
+  <%= f.submit %>
+<% end %>
