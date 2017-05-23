@@ -4,5 +4,9 @@
 
 <h2>Tasks:</h2>
 <% @tasks.each do |task|  %>
-  <h3><%= link_to task.name, task_path(task) %></h3>
+  <h3><%= link_to task.name, task_path(task) %>
+  <%= link_to "[Edit]", edit_task_path(task) %>
+  <%= link_to "[Delete]", task_path(task), method: :delete%>
+  </h3>
 <% end %>
+
